@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>single column</title>
+<style>
+@import url("./stile.css"); /// Qui c'è lo stile
+</style>
+<script src="./jquery-3.2.1.min.js"></script>
+<body>
+
+  <h1>Quali parametri inserisci</h1>
+  
+  <form>
+    <input type="number" name="num1" id="num1" min="1" max="10" step="0.2" placeholder="Num 1" value="1">
+    <input type="number" name="num2" id="num2" min="1" max="10" step="0.2" placeholder="Num 2" value="1.2">
+    <input type="text"   name="txt"  title="testo" placeholder="Testo" value="prova">    
+    <button value="Invia">Invia</button>
+  </form>
+  
+  <h1>Che cosa invii in realtà al server</h1>
+  
+  <output>
+    <!-- Qui apparirà quello che invii -->
+  </output>
+  
+  <h1> Che cosa risponde il server</h1>
+  
+  <article>
+    <!-- Qui apparirà quello che torna -->
+  </article>
+  
+  <!-- La manipolazione della pagina viene gestita qui -->
+  <script src="./il-javascript.js">  </script>
