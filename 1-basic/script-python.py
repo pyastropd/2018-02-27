@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Devi fare
 #
@@ -13,7 +13,7 @@ import sys, json
 try:
     data = json.loads(sys.argv[1])
 except:
-    print "ERROR: no data or bad data format provided"
+    print ("ERROR: no data or bad data format provided")
     sys.exit(1)
 
 # Per fare una prova con il php da solo
@@ -33,4 +33,4 @@ p.txt = "ciaooo---" + p.txt + "---ciao"
 p.nuovonum = ( p.num1 + p.num2 )
 
 # Serializza in json e rispedisci il risultato al PHP
-print json.dumps(p.__dict__)
+print (json.dumps(p.__dict__))

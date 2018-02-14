@@ -25,7 +25,7 @@ $("form").submit(function(e){
             dati_grezzi[this.name] = this.value;
     });
 
-    dati_serializzati = JSON.stringify(dati_grezzi);
+    var dati_serializzati = JSON.stringify(dati_grezzi);
 
     /// Che cosa sto inviando al PHP?
     $("output").html("hai inviato al php questi dati: <br>"+dati_serializzati);

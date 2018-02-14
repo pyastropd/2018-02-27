@@ -1,0 +1,84 @@
+<!doctype html lang="en">
+<meta charset="utf-8">
+<title>pyastropd 2018-02-27</title>
+<style>
+  path{fill:none; stroke:steelblue}
+</style>
+
+<!-- bootstrap.css, jquery, popper, bootstrap.js -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- d3 -->
+<script src="./node_modules/d3/build/d3.min.js"></script>
+
+<body>
+
+  <main class="container-fluid">
+
+    <article class="row">
+
+      <section class="col-md-6">
+        <h1>Simulate data</h1>
+
+        Enter n. points, sigma noise, stdev
+        <form id="simuform">
+          <div class="form-row">
+            <div class="col">
+              <input type="number" class="form-control" name="npoints" id="npoints"
+                     placeholder="n° points" title="n° points" value="100" >
+            </div>
+            <div class="col">
+              <input type="number" class="form-control"  name="sigmanoise" id="sigmanoise"
+                     placeholder="noise" title="noise" value="0.1" min="0.1" step="0.1">
+            </div>
+            <div class="col">
+              <input type="number" class="form-control"  name="sigmadev" id="sigmadev"
+                     placeholder="noise" title="noise" value="5" min="1" step="1">
+            </div>
+            <div class="col">
+              <button class="btn btn-primary" id="simubutton" >Simulate</button>
+            </div>
+          </div>
+          
+        </form>
+
+        amplitude=5.01
+        mean=4.1
+
+        <figure class="card"></figure>
+        
+      </section>
+      <section class="col-md-6">
+        <h1>Fit data</h1>
+
+        Enter polynomial degree
+        <form id="fitform">
+          <div class="form-row">
+            <div class="col">
+              <input type="number" class="form-control" name="degree" id="degree"
+                     placeholder="poly deg" title="degree of the polynomial" value="2" min="1" max="9" >
+            </div>
+            <div class="col">
+              <button class="btn btn-primary" id="fitbutton" >Fit</button>
+            </div>
+          </div>
+          
+        </form>
+
+
+
+      </section>
+    </article>
+
+    <aside></aside>
+    
+  </main>
+
+
+  <!-- this example -->
+  <script src="./il-javascript.js"> </script>
+  <script src="./scatterplot.js"> </script>

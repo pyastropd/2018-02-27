@@ -21,7 +21,7 @@ $post = isset($_GET['mydata']) ? $_GET['mydata'] : null;
 //print_r($result);
 
 /// Per mandarlo al python:
-$result = shell_exec('python ./script-python.py ' . escapeshellarg(json_encode($post)));
+$result = shell_exec('python3 ./script-python.py ' . escapeshellarg(json_encode($post)));
 
 /// Questo risultato verrà preso dal javascript che lo infilerà nell'html
 echo $result;
