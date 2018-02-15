@@ -2,7 +2,8 @@
 
 import numpy as np
 from numpy.polynomial.chebyshev import chebval,chebfit
-from astropy.modeling import models, fitting
+#from astropy.modeling import models, fitting
+
 import sys, json
 
 # Caricare il JSON che hai mandato dal PHP
@@ -20,37 +21,23 @@ class Payload(object):
 # Ecco i dati in un comodo oggetto
 p = Payload(data)
 
+#x,y=zip(*[d.values() for d in p.sim]) # A volte inverte x e y (async)
 
+x=[d['x'] for d in p.sim]
+y=[d['y'] for d in p.sim]
 
+xarr=np.array(x)
+yarr=np.array(y)
 
-# # I dati di input
-npts=p.npoints
-noise=p.sigmanoise
-stddev=p.sigmadev
+# fit data with a polynomial of degree p.polydeg
+pfit1=chebfit(xarr,yarr,p.polideg)
 
-# I dati fissi
-amplitude=5.01
-mean=4.1
-
-# generate the data
-x=np.random.uniform(-25,25,npts)
-
-f = models.Gaussian1D(amplitude=amplitude, mean=mean, stddev=stddev)
-# add noise
-y=f(x)+np.random.normal(loc=0,scale=noise,size=npts)
-
-
-# p0=[-.1,-1.1,-2.1,0.3,-1.1]
-
-# # generate datapoints
-# x=np.random.uniform(-2,2,npts)
-# y=chebval(x,p0)
-# # add some noise
-# y+=np.random.randn(*y.shape)*noise
-
+# generate best-fit lines
+xfit=np.linspace(xarr.min(),xarr.max(),50)
+yfit=chebval(xfit,pfit1)
 
 keys=["x","y"]
 
 # https://stackoverflow.com/questions/29736027/creating-json-from-lists-using-zip
 
-print(json.dumps([dict(zip(keys, row)) for row in zip(x,y)], indent=1))
+print(json.dumps([dict(zip(keys, row)) for row in zip(xfit,yfit)], indent=1))

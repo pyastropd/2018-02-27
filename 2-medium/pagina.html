@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <title>pyastropd 2018-02-27</title>
 <style>
-  path{fill:none; stroke:steelblue}
+  .fitline path{fill:none; stroke:steelblue}
 </style>
 
 <!-- bootstrap.css, jquery, popper, bootstrap.js -->
@@ -24,56 +24,55 @@
       <section class="col-md-6">
         <h1>Simulate data</h1>
 
-        Enter n. points, sigma noise, stdev
-        <form id="simuform">
+        Enter n. points, noise, stdev
+        <form id="simuform" class="form">
           <div class="form-row">
             <div class="col">
               <input type="number" class="form-control" name="npoints" id="npoints"
-                     placeholder="n° points" title="n° points" value="100" >
+                     placeholder="n° points" title="n° points" value="100" min="0" max="110" step="1">
             </div>
             <div class="col">
               <input type="number" class="form-control"  name="sigmanoise" id="sigmanoise"
-                     placeholder="noise" title="noise" value="0.1" min="0.1" step="0.1">
+                     placeholder="noise" title="noise" value="0.10" min="0" step="0.05">
             </div>
             <div class="col">
               <input type="number" class="form-control"  name="sigmadev" id="sigmadev"
-                     placeholder="noise" title="noise" value="5" min="1" step="1">
+                     placeholder="noise" title="noise" value="4" min="1" max="10">
             </div>
-            <div class="col">
-              <button class="btn btn-primary" id="simubutton" >Simulate</button>
+            <div class="col-sm-2">
+              <button class="btn btn-primary btn-block" id="simubutton" >Simulate</button>
             </div>
           </div>
           
         </form>
-
-        amplitude=5.01
-        mean=4.1
-
-        <figure class="card"></figure>
         
       </section>
+
       <section class="col-md-6">
         <h1>Fit data</h1>
 
         Enter polynomial degree
         <form id="fitform">
           <div class="form-row">
-            <div class="col">
-              <input type="number" class="form-control" name="degree" id="degree"
-                     placeholder="poly deg" title="degree of the polynomial" value="2" min="1" max="9" >
+            <div class="col-sm-10">
+              <input type="number" class="form-control" name="polideg" id="polideg"
+                     placeholder="poly deg" title="degree of the polynomial" value="7" min="1" max="20" >
             </div>
-            <div class="col">
-              <button class="btn btn-primary" id="fitbutton" >Fit</button>
+            <div class="col-sm-2">
+              <button class="btn btn-primary btn-block" id="fitbutton" >Fit</button>
             </div>
           </div>
           
         </form>
 
-
-
       </section>
     </article>
 
+    <article >
+      <h2>svg plot</h2>
+      <figure class="card"></figure>
+    </article>
+    
     <aside></aside>
     
   </main>
