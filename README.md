@@ -31,7 +31,7 @@ On Mac, add the following line in `.bash_profile`:
 ```bash
 source ~/.nvm/nvm.sh
 ```
-### Method 2 (repository)
+### Method 2 (repository, probably not the node and nvm latest version)
 
 ```bash
 apt-get -y install node npm
