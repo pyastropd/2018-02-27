@@ -4,6 +4,7 @@ import sys, json
 import numpy as np
 from numpy.polynomial.chebyshev import chebval,chebfit
 
+
 # Caricare il JSON che hai mandato dal PHP
 try:
     data = json.loads(sys.argv[1])
