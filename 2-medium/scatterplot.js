@@ -30,7 +30,7 @@ var xaxis =d3.axisBottom(x)
 var yaxis =d3.axisLeft(y)
         .scale(y);
 
-    // Add the X Axis
+// Add the X Axis
 svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
@@ -45,10 +45,9 @@ svg.append("g")
 var databox = svg.append("g")
         .attr("class","datapoints");
 
-// Add a box for scatter data
+// Add a box for line data
 var linebox = svg.append("g")
-        .attr("class","fitline");
-            
+        .attr("class","fitline");            
 
 function scatter(data){    
     
@@ -71,9 +70,10 @@ function scatter(data){
         .on("mouseover",mouseover)
        .append("title")
         .text( function(d) { return d.x+" "+d.y; });
+    
     scat
         .attr("cx", function(d) { return x(d.x); })
-        .attr("cy", function(d) { return y(d.y); })
+        .attr("cy", function(d) { return y(d.y); });
 
     svg.selectAll(".x")
         .transition()
@@ -87,9 +87,7 @@ function scatter(data){
         d3.select(this).attr("fill", "orange");
     };
     
-
 }
-
 
 function line(data){    
     
@@ -116,4 +114,3 @@ function line(data){
         .attr("d", valueline);
 
 }
-

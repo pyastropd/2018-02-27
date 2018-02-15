@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 
+import sys, json
 import numpy as np
 from numpy.polynomial.chebyshev import chebval,chebfit
-#from astropy.modeling import models, fitting
-
-import sys, json
 
 # Caricare il JSON che hai mandato dal PHP
 try:
@@ -21,6 +19,7 @@ class Payload(object):
 # Ecco i dati in un comodo oggetto
 p = Payload(data)
 
+#########################################################
 #x,y=zip(*[d.values() for d in p.sim]) # A volte inverte x e y (async)
 
 x=[d['x'] for d in p.sim]
@@ -35,6 +34,7 @@ pfit1=chebfit(xarr,yarr,p.polideg)
 # generate best-fit lines
 xfit=np.linspace(xarr.min(),xarr.max(),50)
 yfit=chebval(xfit,pfit1)
+#########################################################
 
 keys=["x","y"]
 
