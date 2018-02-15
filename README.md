@@ -63,6 +63,6 @@ Enter in the `2018-02-27/2-medium` directory and then:
 npm -f install 
 ```
 
-Navigate with your favorite browser in http://localhost:~/your_username/
+Navigate with your favorite browser in http://localhost:~your_username/
 
 
