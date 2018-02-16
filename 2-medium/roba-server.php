@@ -2,13 +2,13 @@
 
 /// Ricevo i dati dal javascript
 
-if (isset($_GET['fitdata'])) { 
-    $post = $_GET['fitdata'];
+if (isset($_POST['fitdata'])) { 
+    $post = $_POST['fitdata'];
     $result = shell_exec('python ./fit-data.py ' . escapeshellarg(json_encode($post)));
 }
 
-elseif (isset($_GET['simudata'])) {
-    $post = $_GET['simudata'];
+elseif (isset($_POST['simudata'])) {
+    $post = $_POST['simudata'];
     $result = shell_exec('python ./simulated-data.py ' . escapeshellarg(json_encode($post)));
 }
 

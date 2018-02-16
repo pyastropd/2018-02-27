@@ -27,7 +27,7 @@ $("button").click(function(e){        /// quando premo un elemento "button", ese
 
     /// Mando tutto al PHP
     $.ajax({
-        type: 'GET',                      /// Che metodo uso?
+        type: 'POST',                      /// Che metodo uso?
         url: './roba-server.php',         /// A che file lo mando?
         data: toserver,                   /// Che cosa mando?
         dataType: 'json'                  /// Che tipo di dati?
