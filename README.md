@@ -69,6 +69,8 @@ Enter in the `2018-02-27/2-medium` directory and then:
 npm -f install 
 ```
 
+to install all dependecy packages for these examples.
+
 # Install Apache and PHP
 
 `apache` is a web server. `php` is a server-side scripting language. 
