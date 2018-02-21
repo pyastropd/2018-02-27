@@ -31,7 +31,7 @@ On Mac, add the following line in `.bash_profile`:
 ```bash
 source ~/.nvm/nvm.sh
 ```
-### Method 2 (repository, probably not the node and nvm latest version)
+### Method 2 (repository, probably not the node and npm latest version)
 
 ```bash
 apt-get -y install node npm
@@ -63,6 +63,6 @@ Enter in the `2018-02-27/2-medium` directory and then:
 npm -f install 
 ```
 
-Navigate with your favorite browser in http://localhost:~your_username/
+Navigate with your favorite browser in http://localhost/~your_username/
 
 
