@@ -17,7 +17,7 @@
 
 <body>
 
-  <main class="container-fluid">
+  <main class="container">
 
     <article class="row">
 
@@ -27,19 +27,19 @@
         Enter n. points, noise, stdev
         <form id="simuform" class="form">
           <div class="form-row">
-            <div class="col">
+            <div class="col form-group">
               <input type="number" class="form-control" name="npoints" id="npoints"
                      placeholder="n° points" title="n° points" value="100" min="0" max="110" step="1">
             </div>
-            <div class="col">
+            <div class="col form-group">
               <input type="number" class="form-control"  name="sigmanoise" id="sigmanoise"
                      placeholder="noise" title="noise" value="0.10" min="0" step="0.05">
             </div>
-            <div class="col">
+            <div class="col form-group">
               <input type="number" class="form-control"  name="sigmadev" id="sigmadev"
-                     placeholder="noise" title="noise" value="4" min="1" max="10">
+                     placeholder="std. dev" title="std.dev" value="4" min="1" max="10">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-3 form-group">
               <button class="btn btn-primary btn-block" id="simubutton" >Simulate</button>
             </div>
           </div>
@@ -54,11 +54,11 @@
         Enter polynomial degree
         <form id="fitform">
           <div class="form-row">
-            <div class="col-sm-10">
+            <div class="col">
               <input type="number" class="form-control" name="polideg" id="polideg"
                      placeholder="poly deg" title="degree of the polynomial" value="7" min="1" max="20" >
             </div>
-            <div class="col-sm-2">
+            <div class="col-3">
               <button class="btn btn-primary btn-block" id="fitbutton" >Fit</button>
             </div>
           </div>
