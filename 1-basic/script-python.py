@@ -15,8 +15,6 @@ try:
 except:
     print ("ERROR: no data or bad data format provided")
     sys.exit(1)
-
-# Per fare una prova con il php da solo
     
 # Mettere tutto il JSON in un oggetto Python per poter trattare i dati come credi    
 class Payload(object):
