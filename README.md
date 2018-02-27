@@ -2,6 +2,8 @@
 # Web interfaces for python applications
 Davide Ricci
 
+example in http://rodan/~indy/git/2018-02-27/ from oapd
+
 Graphical User Interfaces are great. If you plan to build one for your python code, there are several options, some of which will be probably discussed in further meetings. 
 
 But what about making your code usable online for everybody? For example:
