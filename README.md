@@ -82,6 +82,14 @@ apt-get -y install apache2
 apt-get -y install php7.0 libapache2-mod-php7.0
 ```
 
+Enable php in home directories. Open `/etc/apache2/mods-available/php*.conf` with root privilegies, and comment these lines:
+
+    <IfModule mod_userdir.c>
+        <Directory /home/*/public_html>
+            php_admin_value engine Off
+        </Directory>
+    </IfModule>
+
 Now your laptop is a web server!
 
 Following lines will enable your local user web directory that will be visible at http://localhost/~your_username
